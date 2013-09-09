@@ -17,7 +17,10 @@ depends "app_passenger"
 depends "app_tomcat"
 depends "db"
 depends "app_django"
+depends "app_cherrypy"
 depends "app_jboss"
+depends "app_james"
+depends "app_flask"
 
 recipe "app::install_server",
   "Adds the appserver:active=true, appserver:listen_ip=<ip> and" +
@@ -55,6 +58,12 @@ recipe "app::setup_vhost",
   "Sets up the application vhost on selected port. This recipe will call" +
   " the corresponding provider from the app server cookbook, which creates" +
   " an apache vhost file."
+
+
+recipe "app::setup_vhost_skip_apache",
+  "Sets up the application vhost on selected port. This recipe will call" +
+  " the corresponding provider from the app server cookbook, which creates" +
+  " an apache vhost file. This does not attempt to install apache first."
 
 recipe "app::setup_db_connection",
   "Sets up the database connection file. This recipe will call" +
