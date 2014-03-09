@@ -95,7 +95,8 @@
     "app::do_server_stop": "Runs application server stop sequence.",
     "app::do_server_reload": "Runs application server reload sequence.",
     "app::handle_loadbalancers_allow": "Runs remote recipe on app server from loadbalancer requesting access. DO NOT RUN.",
-    "app::handle_loadbalancers_deny": "Runs remote recipe on app server from loadbalancer revoking access. DO NOT RUN.",
+    "app::setup_listenport": "Adds the appserver:active=true, appserver:listen_ip=<ip> and appserver:listen_port=<port> tags to your server which identifies it as an application server and tells the load balancer what IP address and port to connect to. For example, a 'master' database server will update its firewall port permissions to accept incoming requests from application servers with this tag.",
+    "app::handle_loadbalancers_deny": "Runs remote recipe on app server from loadbalancer revoking access. DO NOT RUN."
   },
   "version": "13.4.0"
 }
